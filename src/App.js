@@ -1,19 +1,17 @@
 import "./styles.css";
-import UserPosts from "./UserPosts";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider
-} from "@tanstack/react-query";
+import UserPosts from "./Components/UserPosts";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import PostDataProvider from "./context/PostDataProvider";
+
 const queryClient = new QueryClient();
 
 export default function App() {
   return (
     <div className="App">
       <QueryClientProvider client={queryClient}>
-        <UserPosts />
+        <PostDataProvider>
+          <UserPosts />
+        </PostDataProvider>
       </QueryClientProvider>
     </div>
   );
