@@ -1,0 +1,4 @@
+{
+  "getUsers": "users/1",
+  "getPosts": "posts?userId=1"
+}
